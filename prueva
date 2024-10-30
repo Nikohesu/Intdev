@@ -1,0 +1,4 @@
+    path('', views.tipo_de_usuario_list, name='tipo_de_usuario_list'),
+    path('adicionar/', views.tipo_de_usuario_add, name='tipo_de_usuario_add'),
+    path('editar/<int:pk>/', views.tipo_de_usuario_edit, name='tipo_de_usuario_edit'),
+    path('borrar/<int:pk>/', views.tipo_de_usuario_delete, name='tipo_de_usuario_delete'),

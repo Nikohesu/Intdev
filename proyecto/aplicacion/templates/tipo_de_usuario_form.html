@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <title>Formulario de Usuario</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Editar{% else %}Agregar{% endif %} Usuario</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'tipo_usuario_list' %}">Volver a la lista</a>
+</body>
+</html>

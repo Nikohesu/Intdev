@@ -1,0 +1,32 @@
+{% load static %}
+<!-- cargando las etiquetas y los filtros para manejar archivos estáticos -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+
+
+    <title>Lista de usuarios</title>
+</head>
+<body>
+    
+    <h1>Lista de Usuarios</h1>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.nombre }} {{ usuario.apellido }} - {{ usuario.telefono }}
+                <a href="{% url 'usuario_edit' usuario.id %}">Editar</a>
+                <a href="{% url 'usuario_delete' usuario.id %}">Eliminar</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'usuario_add' %}">Agregar nuevo usuario </a>
+    <a href="{% url 'tipo_usuario_add' %}">agregar tipo de usuario</a>
+
+
+    <!-- JavaScript Personalizado -->
+    <script src="{% static 'js/validaciones.js' %}"></script>
+
+</body>
+</html>
