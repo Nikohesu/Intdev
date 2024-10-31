@@ -14,7 +14,7 @@ def usuario_add(request):
 
 def usuario_list(request):
     usuario = usuarios.objects.all()
-    return render(request, 'usuario_list.html', {'usuarios': usuario})
+    return render(request, 'usuario_list.html', {'usuario': usuario})
 def usuario_edit(request, pk):
     usuario = get_object_or_404(usuarios, pk=pk)
     if request.method == "POST":
@@ -31,7 +31,7 @@ def usuario_delete(request, pk):
     if request.method == "POST":
         usuario.delete()
         return redirect('usuario_list')
-    return render(request, 'usuario_confirm_delete.html', {'usuario': usuario})
+    return render(request, 'usuario_confirm_delete.html', {'usuarios': usuario})
 
 def tipo_de_usuario_add(request):
     if request.method == "POST":
@@ -44,8 +44,9 @@ def tipo_de_usuario_add(request):
     return render(request, 'tipo_de_usuario_form.html', {'form': form})
 
 def tipo_de_usuario_list(request):
-    tipo_de_usuario = tipos_de_usuarios.objects.all()
-    return render(request, 'tipo_usuario_list.html', {'tipo_de_usuarios': tipo_de_usuario})
+    t_usuario = tipos_de_usuarios.objects.all()
+    return render(request, 'tipo_de_usuario_list.html', {'t_usuario': t_usuario})
+
 def tipo_de_usuario_edit(request, pk):
     tipo_de_usuario = get_object_or_404(tipos_de_usuarios, pk=pk)
     if request.method == "POST":

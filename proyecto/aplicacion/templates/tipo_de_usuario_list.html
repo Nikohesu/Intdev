@@ -14,14 +14,18 @@
     
     <h1>Lista de tipos de usuarios</h1>
     <ul>
-        {% for usuario in usuarios %}
+        {% for tipo_de_usuario in tipos_de_usuarios %}
             <li>{{ tipo_de_usuario.nombre }}
                 <a href="{% url 'tipo_usuario_edit' tipos_de_usuarios.id %}">Editar</a>
                 <a href="{% url 'tipo_usuario_delete' tipos_de_usuarios.id %}">Eliminar</a>
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'tipo_usuario_add' %}">Agregar nuevo tipo de usuario</a>
+    <ul>
+        <li><a href="{% url 'tipo_usuario_add' %}">Agregar nuevo tipo de usuario</a></li>
+        <li><a href = "{% url 'usuario_list'%}">Lista de usuarios</a></li>
+    </ul>
+    
     
     <!-- JavaScript Personalizado -->
     <script src="{% static 'js/validaciones.js' %}"></script>

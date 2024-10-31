@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+h1 {
+    color: #333;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+}
+a {
+display: inline-block;
+   	margin: 20px 10px 15px 20px; /*arriba derecha abajo izquierda*/
+   	text-decoration: none;/*underline overline line-through*/
+   	color: rgb(218, 31, 134);
+}

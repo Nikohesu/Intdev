@@ -21,8 +21,13 @@
             </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'usuario_add' %}">Agregar nuevo usuario </a>
-    <a href="{% url 'tipo_usuario_add' %}">agregar tipo de usuario</a>
+    <ul>
+        <li><a href="{% url 'usuario_add' %}">Agregar nuevo usuario </a></li>
+        <li><a href="{% url 'tipo_usuario_list' %}">Lista de tipos de usuarios</a></li>
+    </ul>
+  
+    
+    
 
 
     <!-- JavaScript Personalizado -->

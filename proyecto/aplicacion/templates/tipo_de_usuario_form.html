@@ -7,7 +7,7 @@
     <title>Formulario de Usuario</title>
 </head>
 <body>
-    <h1>{% if form.instance.pk %}Editar{% else %}Agregar{% endif %} Usuario</h1>
+    <h1>{% if form.instance.pk %}Editar{% else %}Agregar{% endif %} tipo de usuario</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
