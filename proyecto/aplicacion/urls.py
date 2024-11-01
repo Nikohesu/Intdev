@@ -10,4 +10,8 @@ urlpatterns = [
     path('tipo_adicionar/', views.tipo_de_usuario_add, name='tipo_usuario_add'),
     path('tipo_editar/<int:pk>/', views.tipo_de_usuario_edit, name='tipo_usuario_edit'),
     path('tipo_borrar/<int:pk>/', views.tipo_de_usuario_delete, name='tipo_usuario_delete'),
+    path('tipo_de_plan/', views.tipo_de_plan_list, name='tipo_plan_list'),
+    path('tipo_plan_adicionar/', views.tipo_de_plan_add, name='tipo_plan_add'),
+    path('tipo_plan_editar/<int:pk>/', views.tipo_de_plan_edit, name='tipo_plan_edit'),
+    path('tipo_plan_borrar/<int:pk>/', views.tipo_de_plan_delete, name='tipo_plan_delete'),
 ]

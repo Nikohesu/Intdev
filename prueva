@@ -1,4 +1,31 @@
-    path('', views.tipo_de_usuario_list, name='tipo_de_usuario_list'),
-    path('adicionar/', views.tipo_de_usuario_add, name='tipo_de_usuario_add'),
-    path('editar/<int:pk>/', views.tipo_de_usuario_edit, name='tipo_de_usuario_edit'),
-    path('borrar/<int:pk>/', views.tipo_de_usuario_delete, name='tipo_de_usuario_delete'),
+def tipo_de_plan_add(request):
+    if request.method == "POST":
+        form = tipos_de_usuariosForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('tipo_usuario_list')
+    else:
+        form = tipos_de_usuariosForm()
+    return render(request, 'tipo_de_plan_form.html', {'form': form})
+
+def tipo_de_plan_list(request):
+    t_usuario = tipos_de_usuarios.objects.all()
+    return render(request, 'tipo_de_plan_list.html', {'t_usuario': t_usuario})
+
+def tipo_de_plan_edit(request, pk):
+    tipo_de_plan = get_object_or_404(tipos_de_usuarios, pk=pk)
+    if request.method == "POST":
+        form = tipos_de_usuariosForm(request.POST, instance=tipo_de_plan)
+        if form.is_valid():
+            form.save()
+            return redirect('tipo_usuario_list')
+    else:
+        form = tipos_de_usuariosForm(instance=tipo_de_plan)
+    return render(request, 'tipo_de_plan_form.html', {'form': form})
+
+def tipo_de_plan_delete(request, pk):
+    tipo_de_plan = get_object_or_404(tipos_de_usuarios, pk=pk)
+    if request.method == "POST":
+        tipo_de_plan.delete()
+        return redirect('tipo_usuario_list')
+    return render(request, 'tipo_usuario_confirm_delete.html', {'tipo_de_plan': tipo_de_plan})
