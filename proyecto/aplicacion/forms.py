@@ -1,5 +1,5 @@
 from django import forms
-from .models import usuarios,tipos_de_usuarios,tipos_de_planes
+from .models import usuarios,tipos_de_usuarios,tipos_de_planes,tipo_pagos
 
 class UsuarioForm(forms.ModelForm):
     class Meta:
@@ -18,4 +18,12 @@ class tipos_de_planform(forms.ModelForm):
         model = tipos_de_planes
         # Los campos que necesita en el formulario
         fields = ['tipo_de_plan',"duracion_meses","valor","id_pago"]
+
+
+class pagoform(forms.ModelForm):
+    class Meta:
+        model = tipo_pagos
+        # Los campos que necesita en el formulario
+        fields = ['tipo_de_pago']
+
         

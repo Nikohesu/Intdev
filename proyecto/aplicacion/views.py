@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import usuarios,tipos_de_usuarios,tipos_de_planes
-from .forms import UsuarioForm,tipos_de_usuariosForm,tipos_de_planform
+from .models import usuarios,tipos_de_usuarios,tipos_de_planes,tipo_pagos
+from .forms import UsuarioForm,tipos_de_usuariosForm,tipos_de_planform,pagoform
 
 def usuario_add(request):
     if request.method == "POST":
@@ -63,7 +63,7 @@ def tipo_de_usuario_delete(request, pk):
     if request.method == "POST":
         tipo_de_usuario.delete()
         return redirect('tipo_usuario_list')
-    return render(request, 'tipo_usuario_confirm_delete.html', {'tipo_de_usuario': tipo_de_usuario})
+    return render(request, 'tipo_de_usuario_confirm_delete.html', {'tipo_de_usuario': tipo_de_usuario})
 
 
 def tipo_de_plan_add(request):
@@ -92,8 +92,45 @@ def tipo_de_plan_edit(request, pk):
     return render(request, 'tipo_de_plan_form.html', {'form': form})
 
 def tipo_de_plan_delete(request, pk):
-    tipo_de_plan = get_object_or_404(tipos_de_usuarios, pk=pk)
+    tipo_de_plan = get_object_or_404(tipos_de_planes, pk=pk)
     if request.method == "POST":
         tipo_de_plan.delete()
         return redirect('tipo_plan_list')
     return render(request, 'tipo_de_plan_confirm_delete.html', {'tipo_de_plan': tipo_de_plan})
+
+
+def pago_add(request):
+    if request.method == "POST":
+        form = pagoform(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('pago_list')
+    else:
+        form = pagoform()
+    return render(request, 'pago_form.html', {'form': form})
+
+def pago_list(request):
+    pago = tipo_pagos.objects.all()
+    return render(request, 'pago_list.html', {'pago': pago})
+
+def pago_edit(request, pk):
+    pago = get_object_or_404(tipo_pagos, pk=pk)
+    if request.method == "POST":
+        form = pagoform(request.POST, instance=pago)
+        if form.is_valid():
+            form.save()
+            return redirect('pago_list')
+    else:
+        form = pagoform(instance=pago)
+    return render(request, 'pago_form.html', {'form': form})
+
+def pago_delete(request, pk):
+    pago = get_object_or_404(tipo_pagos, pk=pk)
+    if request.method == "POST":
+        pago.delete()
+        return redirect('tipo_plan_list')
+    return render(request, 'pago_confirm_delete.html', {'pago': pago})
+
+
+
+

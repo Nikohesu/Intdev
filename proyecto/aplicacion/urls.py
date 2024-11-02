@@ -14,4 +14,9 @@ urlpatterns = [
     path('tipo_plan_adicionar/', views.tipo_de_plan_add, name='tipo_plan_add'),
     path('tipo_plan_editar/<int:pk>/', views.tipo_de_plan_edit, name='tipo_plan_edit'),
     path('tipo_plan_borrar/<int:pk>/', views.tipo_de_plan_delete, name='tipo_plan_delete'),
+    path('pago/', views.pago_list, name='pago_list'),
+    path('pago_adicionar/', views.pago_add, name='pago_add'),
+    path('pago_editar/<int:pk>/', views.pago_edit, name='pago_edit'),
+    path('pago_borrar/<int:pk>/', views.pago_delete, name='pago_delete'),
+
 ]

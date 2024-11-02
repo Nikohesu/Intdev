@@ -14,10 +14,10 @@
     
     <h1>Lista de tipos de planes</h1>
     <ul>
-        {% for tipos_de_planes in tipo_de_plan %}
-            <li>{{ usuario.nombre }} {{ usuario.apellido }} - {{ usuario.telefono }}
-                <a href="{% url 'tipo_plan_edit' usuario.id %}">Editar</a>
-                <a href="{% url 'tipo_plan_delete' usuario.id %}">Eliminar</a>
+        {% for n in t_plan %}
+            <li> {{n.tipo_de_plan}} - {{n.duracion_meses}} - {{n.valor}}
+                 <a href="{% url 'tipo_plan_edit' n.id %}">Editar</a>
+               <a href="{% url 'tipo_plan_delete' n.id %}">Eliminar</a>
             </li>
         {% endfor %}
     </ul>

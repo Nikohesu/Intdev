@@ -14,10 +14,10 @@
     
     <h1>Lista de tipos de usuarios</h1>
     <ul>
-        {% for tipo_de_usuario in tipos_de_usuarios %}
-            <li>{{ tipo_de_usuario.nombre }}
-                <a href="{% url 'tipo_usuario_edit' tipos_de_usuarios.id %}">Editar</a>
-                <a href="{% url 'tipo_usuario_delete' tipos_de_usuarios.id %}">Eliminar</a>
+        {% for n in t_usuario %}
+            <li>{{ n.nombre }}
+                <a href="{% url 'tipo_usuario_edit' n.id %}">Editar</a>
+                <a href="{% url 'tipo_usuario_delete' n.id %}">Eliminar</a>
             </li>
         {% endfor %}
     </ul>
