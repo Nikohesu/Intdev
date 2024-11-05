@@ -1,43 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" /> <!--este define el cortejamiento que tiene la web-->
     <title>The Basic Language of the Web: HTML</title>
   </head>
 
   <body>
-    <!--
+   <!-- 
     <h1>The Basic Language of the Web: HTML</h1>
     <h2>The Basic Language of the Web: HTML</h2>
-    <h3>The Basic Language of the Web: HTML</h3>
+    <h3>The Basic Language of the Web: HTML</h3>todo estos son los tipos de titulos que tenemos en html h1 es el mas grande y h6 es el mas pequeño
     <h4>The Basic Language of the Web: HTML</h4>
     <h5>The Basic Language of the Web: HTML</h5>
     <h6>The Basic Language of the Web: HTML</h6>
-    -->
+  -->
 
-    <header>
+    <header><!--este es el encabezado-->
       <h1>📘 The Code Magazine</h1>
 
       <nav>
-        <a href="blog.html">Blog</a>
+        <a href="blog.html">Blog</a> <!--probalemente nav hace el travajo de nav bar y a representa texto de hiper vinculo el href deve ser la propiedad en la que se define el enlace al que se quiere ir
+        y cuando se usa una almudilla en el href representa un null sin redireccion-->
         <a href="#">Challenges</a>
         <a href="#">Flexbox</a>
         <a href="#">CSS Grid</a>
       </nav>
     </header>
 
-    <article>
+    <article><!--representa un espacion de mensaje talves si se quiere para blog, o canal de noticias, actualmente no leveo gran utilidad en mi desarrollo-->
       <header>
         <h2>The Basic Language of the Web: HTML</h2>
 
         <img
           src="img/laura-jones.jpg"
           alt="Headshot of Laura Jones"
-          height="50"
-          width="50"
-        />
+          height="100"
+          width="100"
+        /><!--este es un img una itequeta que nos permite colocar imagenes 
+        scr representa el lugar de hospedaje de la imagen
+        alt significa alternative y es un texto que se muestra en el caso en el que la imagen no se pueda mostrar-->
 
         <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+        <!--p es la etiqueta comun de los parrafos y strong representa el texto en negrita-->
 
         <img
           src="img/post-img.jpg"
@@ -45,7 +49,7 @@
           width="500"
           height="200"
         />
-      </header>
+      </header><!--aqui termian el encabezado del articulo-->
 
       <p>
         All modern websites and web applications are built using three
@@ -73,7 +77,7 @@
       </p>
       <p>In HTML, each element is made up of 3 parts:</p>
 
-      <ol>
+      <ol> <!--eta es una order list es una lista que enumera sus objetos que se ponen en un list item-->
         <li>The opening tag</li>
         <li>The closing tag</li>
         <li>The actual element</li>
@@ -95,7 +99,7 @@
         web. Here are 5 of them:
       </p>
 
-      <ul>
+      <ul><!--esta esuna urder list, la cual representa un alista pero sin asignacion de numeros-->
         <li>To be able to use the fundamental web dev language</li>
         <li>
           To hand-craft beautiful websites instead of relying on tools like
@@ -109,7 +113,7 @@
       <p>Hopefully you learned something new here. See you next time!</p>
     </article>
 
-    <aside>
+    <aside><!--en aside se puede colocar todo el contenido relacionado con el OBEJETO AL QUE SE COLOQUE-->
       <h4>Related posts</h4>
 
       <ul>
@@ -141,6 +145,9 @@
       </ul>
     </aside>
 
-    <footer>Copyright &copy; 2027 by The Code Magazine.</footer>
+    <footer>Copyright &copy; 2027 by The Code Magazine.</footer><!--por ultimo el footer es el pie de pagina 
+    ,
+    aqui van cosas como el copiright y link de contacto y cosas asi
+    podemos ve que se usa &copy; este representa el signo del copyright -->
   </body>
 </html>

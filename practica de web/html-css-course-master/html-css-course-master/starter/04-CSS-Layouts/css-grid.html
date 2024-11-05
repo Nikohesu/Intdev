@@ -34,22 +34,22 @@
 
       .container--1 {
         /* STARTER */
-        font-family: sans-serif;
-        background-color: #ddd;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #ddd;/*font family es la fuente de la letra background color es el color de fondo, font size es el tamaño de la fuente, devemos recordar que al estarnos refiriento al div que uno los demas esto afecta a todos los objetos en su interior, y margin es la pargen la cual esta definida en pixeles tambien se puede poner basada en porcentage */
         font-size: 40px;
         margin: 40px;
 
         /* CSS GRID */
       }
-
+        /* el punto se refiere a las clases que denimos en los div */
       .container--2 {
         /* STARTER */
         font-family: sans-serif;
-        background-color: black;
+        background-color: #be0c0c;
         font-size: 40px;
         margin: 100px;
 
-        width: 1000px;
+        width: 1000px; /*tambier se le puede definir un with y height especifico desde css*/
         height: 600px;
 
         /* CSS GRID */
@@ -57,7 +57,7 @@
     </style>
   </head>
   <body>
-    <div class="container--1">
+    <div class="container--1"><!--div es una etiquta de division, normalmente se usa para agrupar varios elementos -->
       <div class="el el--1">(1) HTML</div>
       <div class="el el--2">(2) and</div>
       <div class="el el--3">(3) CSS</div>
@@ -69,12 +69,12 @@
     </div>
 
     <div class="container--2">
-      <div class="el el--1">(1)</div>
+      <div class="el el--1">(1) hello</div>
       <div class="el el--3">(3)</div>
       <div class="el el--4">(4)</div>
       <div class="el el--5">(5)</div>
       <div class="el el--6">(6)</div>
-      <div class="el el--7">(7)</div>
+      <div class="el el--7">(7)funciona en css</div>
     </div>
   </body>
 </html>
